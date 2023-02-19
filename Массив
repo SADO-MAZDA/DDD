@@ -1,0 +1,57 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Сумма_и_произведение_в_матрице
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            const string CommandSum = "Sum";
+            const string CommandExit = "Exit";
+            bool exit = true;
+            string userInput ="" ;
+            int []arraySum = new int [0];
+            char number;
+            int x;
+            int summa =0;
+            int[] bag = new int[0];
+      
+            while (exit == true)
+            {
+                userInput = Console.ReadLine();
+
+                if(userInput== CommandExit)
+                {
+                    Console.WriteLine("До свидания");
+                    exit = false;
+                }
+                if (userInput == CommandSum)
+                {
+                    for (int i = 0; i < bag.Length; i++)
+                    {
+                        summa += bag[i];
+                    }
+                    Console.WriteLine(summa + " - сумма чисел массива");
+                    exit = false;
+                }
+                else
+                {
+                    x = Convert.ToInt32(userInput);
+                    bag = new int [arraySum.Length + 1];
+                    for (int i = 0; i < arraySum.Length; i++)
+                    {
+                        arraySum[i] = x;
+                        bag[i] = arraySum[i];
+                        Console.WriteLine(x);
+                    }
+
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
